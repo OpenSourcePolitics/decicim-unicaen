@@ -215,6 +215,37 @@ describe "Authentication", type: :system do
       end
     end
 
+    context "when using CAEN CAS" do
+      let(:omniauth_hash) do
+        OmniAuth::AuthHash.new(
+          provider: "unicaen",
+          uid: "123545",
+          info: {
+            name: "CAEN Account",
+            email: "caen@example.org"
+          }
+        )
+      end
+
+      before do
+        OmniAuth.config.test_mode = true
+        OmniAuth.config.mock_auth[:unicaen] = omniauth_hash
+      end
+
+      after do
+        OmniAuth.config.test_mode = false
+        OmniAuth.config.mock_auth[:unicaen] = nil
+      end
+
+      it "creates a new User" do
+        find(".sign-up-link").click
+
+        click_link "Sign in with Unicaen"
+
+        expect_user_logged
+      end
+    end
+
     context "when sign up is disabled" do
       let(:organization) { create(:organization, users_registration_mode: :existing) }
 
