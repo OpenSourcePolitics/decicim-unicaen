@@ -32,6 +32,12 @@ en:
         name: Identity Verification Form
       osp_authorization_workflow:
         name: Authorization procedure
+    system:
+      organizations:
+        omniauth_settings:
+          cas:
+            host: Host of endpoint
+            provider_name: Provider name
     verifications:
       authorizations:
         first_login:
