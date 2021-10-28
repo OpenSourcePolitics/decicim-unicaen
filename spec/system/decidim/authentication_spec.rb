@@ -12,14 +12,6 @@ describe "Authentication", type: :system do
   end
 
   describe "Sign Up" do
-    context "user can't log in without SSO" do
-      it "creates a new User" do
-        find(".sign-up-link").click
-
-        expect(page).not_to have_css(".new_user")
-      end
-    end
-
     context "when using CAEN CAS" do
       let(:omniauth_hash) do
         OmniAuth::AuthHash.new(
