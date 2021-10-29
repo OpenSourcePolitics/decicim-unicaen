@@ -13,13 +13,13 @@ gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-te
 
 gem "bootsnap", "~> 1.4"
 gem "dotenv-rails"
-gem "puma", "~> 4.3.7"
-gem "uglifier", "~> 4.1"
 gem "faker", "~> 1.9"
-gem "ruby-progressbar"
 gem "letter_opener_web", "~> 1.3"
-gem "sprockets", "~> 3.7"
 gem "omniauth-cas"
+gem "puma", "~> 4.3.7"
+gem "ruby-progressbar"
+gem "sprockets", "~> 3.7"
+gem "uglifier", "~> 4.1"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri

@@ -11,8 +11,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     provider(
       OmniAuth::Strategies::Unicaen,
       setup: setup_provider_proc(:cas,
-                                 host: :host
-      )
+                                 host: :host)
     )
   end
 end

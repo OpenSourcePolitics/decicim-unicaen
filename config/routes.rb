@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   devise_scope :user do
-    get '/admin_sign_in', to: "decidim/devise/sessions#new"
+    get "/admin_sign_in", to: "decidim/devise/sessions#new"
   end
 
   mount Decidim::Core::Engine => "/"
