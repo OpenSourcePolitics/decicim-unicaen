@@ -83,6 +83,11 @@ translation:
 # Do not consider these keys missing:
 ignore_missing:
  - faker.*
+ - devise.sessions.new.sign_in
+ - devise.shared.links.sign_in_with_provider
+ - decidim.devise.sessions.new.*
+ - decidim.devise.shared.omniauth_buttons.or
+
 
 # Consider these keys used:
 ignore_unused:
