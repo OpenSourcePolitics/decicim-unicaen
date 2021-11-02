@@ -32,6 +32,12 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    system:
+      organizations:
+        omniauth_settings:
+          cas:
+            host: Nom de domaine de l'endpoint
+            provider_name: Nom du SSO
     verifications:
       authorizations:
         first_login:

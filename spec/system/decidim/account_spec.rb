@@ -16,7 +16,8 @@ describe "Account", type: :system do
     it "shows the account form when clicking on the menu" do
       visit decidim.root_path
 
-      within_user_menu do
+      within ".topbar__user__logged" do
+        find("a", text: user.name).hover
         find("a", text: "account").click
       end
 
@@ -48,7 +49,8 @@ describe "Account", type: :system do
 
         user.reload
 
-        within_user_menu do
+        within ".topbar__user__logged" do
+          find("a", text: user.name).hover
           find("a", text: "public profile").click
         end
 
@@ -146,17 +148,6 @@ describe "Account", type: :system do
         within_flash_messages do
           expect(page).to have_content("successfully")
         end
-
-        find(".sign-in-link").click
-
-        within ".new_user" do
-          fill_in :session_user_email, with: user.email
-          fill_in :session_user_password, with: password
-          find("*[type=submit]").click
-        end
-
-        expect(page).to have_no_content("Signed in successfully")
-        expect(page).to have_no_content(user.name)
       end
     end
   end
