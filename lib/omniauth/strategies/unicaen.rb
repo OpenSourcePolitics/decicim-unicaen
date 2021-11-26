@@ -12,7 +12,7 @@ module OmniAuth
       option :first_name_key, "givenName"
       option :last_name_key, "sn"
       option :email_key, "mail"
-      option :status_key, "eduPersonEntitlement"
+      option :status_key, "ucbnStatus"
 
       # As required by https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
       # rubocop:disable Naming/ConstantName
