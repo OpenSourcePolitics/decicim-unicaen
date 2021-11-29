@@ -12,7 +12,6 @@ module OmniAuth
       option :first_name_key, "givenName"
       option :last_name_key, "sn"
       option :email_key, "mail"
-      option :status_key, "eduPersonEntitlement"
 
       # As required by https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
       # rubocop:disable Naming/ConstantName
@@ -21,7 +20,7 @@ module OmniAuth
       info do
         Rails.logger.debug raw_info
         prune!(
-          name: raw_info[options[:name_key].to_s],
+          name: raw_info[options[:first_name_key].to_s] + " " + raw_info[options[:last_name_key].to_s],
           email: raw_info[options[:email_key].to_s],
           nickname: raw_info[options[:nickname_key].to_s],
           first_name: raw_info[options[:first_name_key].to_s],
