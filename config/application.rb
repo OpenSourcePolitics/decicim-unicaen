@@ -16,10 +16,7 @@ module DevelopmentApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.time_zone = "Europe/Paris"
-    # rubocop:disable Rails/FilePath
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml").to_s]
-    # rubocop:enable Rails/FilePath
-
     # This needs to be set for correct images URLs in emails
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
     # config.action_mailer.asset_host = "https://your.server.url"
