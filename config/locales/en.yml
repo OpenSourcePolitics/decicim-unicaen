@@ -32,6 +32,20 @@ en:
         name: Identity Verification Form
       osp_authorization_workflow:
         name: Authorization procedure
+    meetings:
+      directory:
+        meetings:
+          index:
+            all: All
+      meeting:
+        not_allowed: Not allowed
+      meetings:
+        create:
+          invalid: Invalid
+          success: Success
+        update:
+          invalid: Invalid
+          success: Success
     system:
       organizations:
         omniauth_settings:
@@ -46,7 +60,18 @@ en:
             osp_authorization_workflow: Verify with the identity verification form
   faker:
     address:
-      country_code: '["EN", "EN0", "EN1", "EN2", "EN3", "EN4", "EN5", "EN6", "EN7", "EN8", "EN9"]'
+      country_code:
+      - EN
+      - EN0
+      - EN1
+      - EN2
+      - EN3
+      - EN4
+      - EN5
+      - EN6
+      - EN7
+      - EN8
+      - EN9
   layouts:
     decidim:
       footer:
