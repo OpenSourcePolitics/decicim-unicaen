@@ -22,12 +22,12 @@ gem "faker", "~> 2.14"
 gem "ruby-progressbar"
 
 gem "letter_opener_web", "~> 1.3"
-gem 'omniauth-cas', git: "https://github.com/stanhu/omniauth-cas", branch: "sh-update-omniauth2"
+gem "omniauth-cas", git: "https://github.com/stanhu/omniauth-cas", branch: "sh-update-omniauth2"
 
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
 gem "fog-aws"
-gem "sys-filesystem"
 gem "nokogiri", "1.13.4"
+gem "sys-filesystem"
 
 gem "rack-attack", "~> 6.6"
 
@@ -38,7 +38,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3"
   gem "listen", "~> 3.1"
   gem "rubocop-faker"
   gem "spring", "~> 2.0"
