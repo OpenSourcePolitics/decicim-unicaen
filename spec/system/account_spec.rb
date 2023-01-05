@@ -139,6 +139,26 @@ describe "Account", type: :system do
       end
     end
 
+    context "when on the notifications settings page" do
+      before do
+        visit decidim.notifications_settings_path
+      end
+
+      it "updates the user's notifications" do
+        within ".switch.newsletter_notifications" do
+          page.find(".switch-paddle").click
+        end
+
+        within "form.edit_user" do
+          find("*[type=submit]").click
+        end
+
+        within_flash_messages do
+          expect(page).to have_content("successfully")
+        end
+      end
+    end
+
     context "when on the interests page" do
       before do
         visit decidim.user_interests_path
@@ -192,7 +212,7 @@ describe "Account", type: :system do
           expect(page).to have_content("successfully")
         end
 
-        find(".sign-in-link").click
+        visit admin_sign_in_path
 
         within ".new_user" do
           fill_in :session_user_email, with: user.email
